@@ -1,0 +1,57 @@
+:root {
+    --secondary-color: #03073f;
+    --primary-color: #01031f;
+    --text-color: #f8f9fa;
+    --special-text-color: #b7dbff;
+}
+
+body {
+    font-family: "Courier Prime", monospace;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    margin: 0;
+}
+
+.secondary-color {
+    background-color: var(--secondary-color);
+}
+
+.secondary-txt-color {
+    color: var(--text-color);
+}
+
+.special-txt-color {
+    color: var(--special-text-color);
+}
+
+.large-text {
+    font-size: 400%;
+}
+
+.image-container {
+    max-width: 100%; /* Ensures image does not exceed the container's width */
+    max-height: 20vh;
+    height: auto; /* Maintains aspect ratio */
+    text-align: center; /* Centers the image horizontally */
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+@media (min-width: 992px) {
+    #padder {
+        height:15vh;
+    }
+}
+
+.cursor {
+    animation: blink-animation 0.8s infinite;
+}
+
+@keyframes blink-animation {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}

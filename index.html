@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.163.0/examples/jsm/"
+          }
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomasz Pniewski</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row" style="height:100vh;">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="col-md-4 col-lg-3 d-md-block secondary-color sidebar sticky-top" >
+                <div class="sidebar sticky-top">
+                    <ul class="nav flex-column">
+                        <div id="padder"></div>
+                        <li class="nav-item">
+                            <a class="nav-link active secondary-txt-color" href="#">
+                                <h2>O mnie</h2>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link secondary-txt-color" href="/technologies.html">
+                                <h2>Umiejętności</h2>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link secondary-txt-color" href="/projects.html">
+                                <h2>Projekty</h2>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link secondary-txt-color" href="/interests.html">
+                                <h2>Zainteresowania</h2>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+    
+            <!-- Main content area -->
+            <main role="main" class="col-md-8 ml-sm-auto col-lg-9 px-md-4">
+                <div class="row flex-wrap align-items-center">
+                    <div class="col-md-8 p-3 text-center">
+                        <span id="text1" class="large-text ml-5"></span><span class="cursor large-text">_</span>
+                    </div>
+                    <div class="col-md-4 p-3">
+                        <div id="container" class="ratio ratio-1x1"></div>
+                    </div>
+                </div>
+                <!-- Content goes here -->
+                <div class="container pl-5">
+                <h4 class="mb-4">Jestem studentem trzeciego roku na Uniwersytecie Warszawskim. 
+                    Studiuję informatykę oraz fizykę, w ramach Kolegium Międzywydziałowych Indywidualnych Studiów Matematyczno-Przyrodniczych.</h4>
+                <h4 class="mb-4">Dzięki studiom międzywydziałowym łączę ze sobą obie moje pasje: programowanie oraz modelowanie układów fizycznych. 
+                    Ponadto, w czasie toku studiów na Wydziale MIMUW udało mi się pozyskać wiele cennych w pracy zawodowej umiejętności.</h4>
+                <h4 class="mb-4">Wśród zrealizowanych przeze mnie kursów można wymienić przedmioty obowiązkowe, które nauczyły mnie podstaw algorytmiki
+                    i struktur danych, programowania współbieżnego, podstaw działania systemów operacyjnych, programowania obiektowego, a także projektowania
+                    aplikacji webowych oraz baz danych, z wykorzystaniem wielu różnych frameworków.</h4>
+                <h4 class="mb-4">Realizowałem także kursy fakultatywne, dzięki którym nauczyłem się 
+                    podstaw computer vision używając OpenCV oraz najważniejszych zagadnień z obszaru kontroli systemów robotycznych.</h4>
+                <span></span>
+                <h4 class="mt-5 mb-5 fw-bold">Zapraszam do kontaktu poprzez e-mail: <a href="mailto:tomasz.pniewski77@gmail.com" class="changebutton active special-txt-color">tomasz.pniewski77@gmail.com</a></h4>
+                
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="module">
+        import { init } from '/src/script.js';
+
+        var theme = sessionStorage.getItem('theme');
+        if (theme == null) {
+            theme = 'atom';
+            sessionStorage.setItem('theme', 'atom');
+        }
+        // Initialize Three.js scene in the container
+        init('container', 
+            getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim(), 
+            getComputedStyle(document.documentElement).getPropertyValue('--text-color').trim(), theme);
+    </script>
+</body>
+</html>
